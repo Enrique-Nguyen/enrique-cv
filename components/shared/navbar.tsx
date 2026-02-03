@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Navbar() {
   const navLinks = [
-    { name: "About", href: "/about" },
+    { name: "About", href: "/" },
     { name: "Projects", href: "/projects" },
     { name: "Contact", href: "#contact" }, // Tạm thời dùng anchor link
   ];
