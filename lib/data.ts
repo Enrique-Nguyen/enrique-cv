@@ -32,11 +32,12 @@ export const projects: Project[] = [
     demoUrl: "https://play.google.com/store/apps/details?id=...",
   },
   {
-    title: "Artichoke Yield Prediction",
-    description: "Mô hình Machine Learning dự đoán năng suất cây Atiso dựa trên dữ liệu khí hậu và thổ nhưỡng.",
-    tags: ["Python", "TensorFlow", "LSTM", "Pandas"],
-    imageUrl: "/images/project-ai.jpg",
-    repoUrl: "https://github.com/username/artichoke-yield",
+    title: "Website bán hàng",
+    description: "Website thương mại điện tử, phục vụ cho hoạt động khởi nghiệp của bản thân.",
+    tags: ["Vite", "React", "TypeScript", "shadcn/ui", "axios"],
+    imageUrl: "/images/hnv.jpg",
+    repoUrl: "https://hnvstories.com",
+    demoUrl: "https://hnvstories.com",
   },
   {
     title: "Personal Portfolio",

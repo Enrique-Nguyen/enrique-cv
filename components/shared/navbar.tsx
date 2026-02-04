@@ -6,7 +6,7 @@ export default function Navbar() {
   const navLinks = [
     { name: "About", href: "/" },
     { name: "Projects", href: "/projects" },
-    { name: "Contact", href: "#contact" }, // Tạm thời dùng anchor link
+    { name: "Contact", href: "/contact" }, // Tạm thời dùng anchor link
   ];
 
   return (
@@ -16,7 +16,7 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
            <Link href="/" className="font-bold text-xl tracking-tight">
             <span className="text-primary">&lt;</span>
-            DevPortfolio
+            Enrique
             <span className="text-primary">/&gt;</span>
           </Link>
         </div>

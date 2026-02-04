@@ -60,7 +60,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         {project.demoUrl && (
           <Link href={project.demoUrl} target="_blank" className="w-full">
             <Button className="w-full gap-2">
-              <ExternalLink className="h-4 w-4" /> Demo
+              <ExternalLink className="h-4 w-4" /> Xem
             </Button>
           </Link>
         )}

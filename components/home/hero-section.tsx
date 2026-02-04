@@ -6,14 +6,14 @@ import { Github, Linkedin, Mail, ArrowRight, Download, MapPin } from "lucide-rea
 
 export default function HeroSection() {
   return (
-    <section className="relative container flex flex-col md:flex-row items-center justify-center py-24 md:py-36 gap-12 md:gap-16 lg:gap-20 overflow-hidden">
+    <section className="relative container flex flex-col md:flex-row items-center justify-center py-20 md:py-28 lg:py-36 gap-10 md:gap-12 lg:gap-20 overflow-hidden">
       
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="max-w-xl space-y-8 text-center md:text-left">
+      <div className="max-w-xl space-y-6 md:space-y-8 text-center md:text-left">
         <div className="space-y-4">
           <div className="inline-flex items-center gap-2 animate-fade-in">
             <Badge variant="secondary" className="px-4 py-1.5 text-sm font-medium rounded-full">
@@ -48,9 +48,9 @@ export default function HeroSection() {
         </div>
 
         <p className="text-muted-foreground max-w-xl md:text-lg leading-relaxed mx-auto md:mx-0">
-          Sinh viên năm 3 chuyên ngành CNTT với niềm đam mê xây dựng các ứng dụng web 
+          Sinh viên chuyên ngành CNTT tại TLU với niềm đam mê xây dựng các ứng dụng phần mềm 
           <span className="text-foreground font-medium"> hiệu năng cao </span> 
-          sử dụng Next.js và hệ sinh thái JavaScript. Đang tìm kiếm cơ hội thực tập/làm việc tại môi trường Nhật Bản 🇯🇵
+          sử dụng đa dạng framework và TechStack. Đang tìm kiếm cơ hội thực tập/làm việc tại môi trường Nhật Bản 🇯🇵
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
