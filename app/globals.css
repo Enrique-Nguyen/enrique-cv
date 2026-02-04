@@ -171,3 +171,19 @@
 .group:hover .animate-marquee {
   animation-play-state: paused;
 }
+
+/* Scroll Down Indicator Animation */
+@keyframes scroll-down {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+.animate-scroll-down {
+  animation: scroll-down 1.5s ease-in-out infinite;
+}

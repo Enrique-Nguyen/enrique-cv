@@ -2,11 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Github, Linkedin, Mail, ArrowRight, Download, MapPin } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowRight, Download, MapPin, ChevronDown } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative container flex flex-col md:flex-row items-center justify-center py-20 md:py-28 lg:py-36 gap-10 md:gap-12 lg:gap-20 overflow-hidden">
+    <section className="relative container flex flex-col md:flex-row items-center justify-center py-12 md:py-16 lg:py-20 gap-10 md:gap-12 lg:gap-20 overflow-hidden">
       
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
@@ -54,7 +54,7 @@ export default function HeroSection() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-          <Link href="#contact">
+          <Link href="/contact">
             <Button size="lg" className="w-full sm:w-auto group shadow-lg hover:shadow-primary/25 transition-all duration-300">
               Liên hệ ngay
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -115,6 +115,15 @@ export default function HeroSection() {
             💻 Coder
           </div>
         </div>
+      </div>
+
+      {/* Scroll Down Indicator */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-in">
+        <span className="text-xs text-muted-foreground font-medium">Cuộn xuống</span>
+        <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-1.5">
+          <div className="w-1.5 h-1.5 rounded-full bg-primary animate-scroll-down" />
+        </div>
+        <ChevronDown className="h-4 w-4 text-muted-foreground animate-bounce" style={{ animationDuration: '2s' }} />
       </div>
     </section>
   );
