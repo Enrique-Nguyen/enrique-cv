@@ -8,16 +8,13 @@ export default function HeroSection() {
   return (
     <section className="relative container flex flex-col md:flex-row items-center justify-center py-24 md:py-36 gap-12 md:gap-16 lg:gap-20 overflow-hidden">
       
-      {/* Background decoration */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
       </div>
 
-      {/* Cột trái: Nội dung text */}
       <div className="max-w-xl space-y-8 text-center md:text-left">
         <div className="space-y-4">
-          {/* Badge với animation */}
           <div className="inline-flex items-center gap-2 animate-fade-in">
             <Badge variant="secondary" className="px-4 py-1.5 text-sm font-medium rounded-full">
               <span className="relative flex h-2 w-2 mr-2">
@@ -46,7 +43,7 @@ export default function HeroSection() {
 
           <div className="flex items-center gap-2 justify-center md:justify-start text-muted-foreground">
             <MapPin className="h-4 w-4" />
-            <span className="text-sm">Việt Nam • Đang hướng tới Nhật Bản</span>
+            <span className="text-sm">Hà Nội, Việt Nam • Đang hướng tới Nhật Bản</span>
           </div>
         </div>
 
@@ -56,7 +53,6 @@ export default function HeroSection() {
           sử dụng Next.js và hệ sinh thái JavaScript. Đang tìm kiếm cơ hội thực tập/làm việc tại môi trường Nhật Bản 🇯🇵
         </p>
 
-        {/* Nút hành động */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
           <Link href="#contact">
             <Button size="lg" className="w-full sm:w-auto group shadow-lg hover:shadow-primary/25 transition-all duration-300">
@@ -72,7 +68,6 @@ export default function HeroSection() {
           </Link>
         </div>
 
-        {/* Social Icons */}
         <div className="flex gap-3 justify-center md:justify-start pt-2">
           <Link 
             href="https://github.com/Enrique-Nguyen" 
@@ -97,16 +92,12 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Cột phải: Ảnh đại diện */}
       <div className="shrink-0 flex justify-center">
         <div className="relative w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 group">
-          {/* Hiệu ứng vòng tròn gradient phía sau */}
           <div className="absolute inset-0 bg-linear-to-br from-primary/30 via-primary/20 to-transparent rounded-full blur-3xl scale-110 animate-pulse" />
           
-          {/* Vòng tròn xoay */}
           <div className="absolute inset-0 rounded-full border-2 border-dashed border-primary/30 animate-spin-slow" style={{ animationDuration: '20s' }} />
           
-          {/* Ảnh chính */}
           <div className="relative w-full h-full rounded-full border-4 border-background shadow-2xl overflow-hidden ring-4 ring-primary/10 group-hover:ring-primary/30 transition-all duration-500">
             <Image
               src="/images/avatar.jpg" 
@@ -117,7 +108,6 @@ export default function HeroSection() {
             />
           </div>
 
-          {/* Floating badges */}
           <div className="absolute -right-2 top-8 bg-background border shadow-lg rounded-full px-3 py-1.5 text-sm font-medium animate-bounce" style={{ animationDuration: '3s' }}>
             🚀 Dev
           </div>

@@ -12,3 +12,39 @@ export const skills = [
   { name: "Figma", icon: "figma" },
   { name: "Linux", icon: "linux" },
 ];
+
+export interface Project {
+  title: string;
+  description: string;
+  tags: string[];
+  imageUrl: string;
+  repoUrl: string; // Link GitHub
+  demoUrl?: string; // Link chạy thử (nếu có)
+}
+
+export const projects: Project[] = [
+  {
+    title: "ClassPal Mobile App",
+    description: "Ứng dụng di động quản lý lớp học và điểm danh, giúp giảng viên và sinh viên kết nối hiệu quả hơn.",
+    tags: ["Flutter", "Dart", "Firebase", "GetX"],
+    imageUrl: "/images/project-classpal.jpg", // Bạn nhớ tạo ảnh này
+    repoUrl: "https://github.com/username/classpal",
+    demoUrl: "https://play.google.com/store/apps/details?id=...",
+  },
+  {
+    title: "Artichoke Yield Prediction",
+    description: "Mô hình Machine Learning dự đoán năng suất cây Atiso dựa trên dữ liệu khí hậu và thổ nhưỡng.",
+    tags: ["Python", "TensorFlow", "LSTM", "Pandas"],
+    imageUrl: "/images/project-ai.jpg",
+    repoUrl: "https://github.com/username/artichoke-yield",
+  },
+  {
+    title: "Personal Portfolio",
+    description: "Website cá nhân giới thiệu bản thân, tích hợp chế độ tối và đa ngôn ngữ.",
+    tags: ["Next.js 16", "TypeScript", "Tailwind", "Shadcn/ui"],
+    imageUrl: "/images/project-portfolio.jpg",
+    repoUrl: "https://github.com/username/portfolio",
+    demoUrl: "https://my-portfolio.com",
+  },
+  // Thêm các dự án khác của bạn vào đây...
+];
