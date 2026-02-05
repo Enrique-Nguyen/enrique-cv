@@ -6,7 +6,7 @@ import { Github, Linkedin, Mail, ArrowRight, Download, MapPin, ChevronDown } fro
 
 export default function HeroSection() {
   return (
-    <section className="relative container flex flex-col md:flex-row items-center justify-center py-12 md:py-16 lg:py-20 gap-10 md:gap-12 lg:gap-20 overflow-hidden">
+    <section className="relative container mx-auto flex flex-col md:flex-row items-center justify-center py-12 md:py-16 lg:py-20 gap-10 md:gap-12 lg:gap-20 overflow-hidden px-4 md:px-8">
       
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
@@ -49,7 +49,7 @@ export default function HeroSection() {
 
         <p className="text-muted-foreground max-w-xl md:text-lg leading-relaxed mx-auto md:mx-0">
           Sinh viên chuyên ngành CNTT tại TLU với niềm đam mê xây dựng các ứng dụng phần mềm 
-          <span className="text-foreground font-medium"> hiệu năng cao </span> 
+          <span className="text-foreground font-medium"> Web, Mobile </span> 
           sử dụng đa dạng framework và TechStack. Đang tìm kiếm cơ hội thực tập/làm việc tại môi trường Nhật Bản 🇯🇵
         </p>
 
@@ -117,8 +117,8 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll Down Indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-in">
+      {/* Scroll Down Indicator - Hidden on mobile to prevent overlap with avatar */}
+      <div className="hidden md:flex absolute bottom-6 left-1/2 -translate-x-1/2 flex-col items-center gap-2 animate-fade-in">
         <span className="text-xs text-muted-foreground font-medium">Cuộn xuống</span>
         <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-1.5">
           <div className="w-1.5 h-1.5 rounded-full bg-primary animate-scroll-down" />

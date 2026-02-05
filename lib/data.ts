@@ -18,34 +18,46 @@ export interface Project {
   description: string;
   tags: string[];
   imageUrl: string;
-  repoUrl: string; // Link GitHub
-  demoUrl?: string; // Link chạy thử (nếu có)
+  repoUrl?: string; 
+  demoUrl?: string; 
 }
 
 export const projects: Project[] = [
   {
     title: "ClassPal Mobile App",
-    description: "Ứng dụng di động quản lý lớp học và điểm danh, giúp giảng viên và sinh viên kết nối hiệu quả hơn.",
-    tags: ["Flutter", "Dart", "Firebase", "GetX"],
-    imageUrl: "/images/project-classpal.jpg", // Bạn nhớ tạo ảnh này
-    repoUrl: "https://github.com/username/classpal",
-    demoUrl: "https://play.google.com/store/apps/details?id=...",
+    description: "Bài tập lớn môn Phát triển ứng dụng di động - Ứng dụng quản lý học tập cho sinh viên.",
+    tags: ["Flutter", "Dart", "Firebase"],
+    imageUrl: "/images/mobile_classpal.jpg", 
+    repoUrl: "https://github.com/Enrique-Nguyen/mobile_classpal",
   },
   {
     title: "Website bán hàng",
     description: "Website thương mại điện tử, phục vụ cho hoạt động khởi nghiệp của bản thân.",
     tags: ["Vite", "React", "TypeScript", "shadcn/ui", "axios"],
     imageUrl: "/images/hnv.jpg",
-    repoUrl: "https://hnvstories.com",
     demoUrl: "https://hnvstories.com",
   },
   {
     title: "Personal Portfolio",
     description: "Website cá nhân giới thiệu bản thân, tích hợp chế độ tối và đa ngôn ngữ.",
     tags: ["Next.js 16", "TypeScript", "Tailwind", "Shadcn/ui"],
-    imageUrl: "/images/project-portfolio.jpg",
-    repoUrl: "https://github.com/username/portfolio",
-    demoUrl: "https://my-portfolio.com",
+    imageUrl: "/images/anh_tam.jpg",
+    repoUrl: "https://github.com/Enrique-Nguyen/enrique-cv",
+    demoUrl: "/",
   },
-  // Thêm các dự án khác của bạn vào đây...
+  {
+    title: "Quản lí thư viện",
+    description: "Bài tập lớn môn học Lập trình Windows, sử dụng C# và WPF.",
+    tags: ["C#", "WPF", "SQLServer"],
+    imageUrl: "/images/anh_tam.jpg",
+    repoUrl: "https://github.com/cloodei/librun",
+  },
+  {
+    title: "Website thẻ học tập",
+    description: "Website học tập bằng flashcard tương tự Anki, bài tập lớn môn học Công nghệ phần mềm.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
+    imageUrl: "/images/anh_tam.jpg",
+    repoUrl: "https://github.com/cloodei/btl-cnpm",
+    demoUrl: "https://btl-cnpm.vercel.app/",
+  },
 ];

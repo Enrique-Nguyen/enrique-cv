@@ -51,18 +51,27 @@ export function ProjectCard({ project }: ProjectCardProps) {
       </CardContent>
 
       <CardFooter className="flex gap-2 pt-0 mt-auto">
-        <Link href={project.repoUrl} target="_blank" className="w-full">
-          <Button variant="outline" className="w-full gap-2">
-            <Github className="h-4 w-4" /> Code
-          </Button>
-        </Link>
+        {project.repoUrl && (
+          <Link href={project.repoUrl} target="_blank" className={project.demoUrl ? "flex-1" : "w-full"}>
+            <Button variant="outline" className="w-full gap-2">
+              <Github className="h-4 w-4" /> Code
+            </Button>
+          </Link>
+        )}
 
         {project.demoUrl && (
-          <Link href={project.demoUrl} target="_blank" className="w-full">
+          <Link href={project.demoUrl} target="_blank" className={project.repoUrl ? "flex-1" : "w-full"}>
             <Button className="w-full gap-2">
               <ExternalLink className="h-4 w-4" /> Xem
             </Button>
           </Link>
+        )}
+
+        {/* Hiển thị khi không có cả repoUrl và demoUrl */}
+        {!project.repoUrl && !project.demoUrl && (
+          <Button variant="secondary" className="w-full" disabled>
+            Đang cập nhật
+          </Button>
         )}
       </CardFooter>
     </Card>

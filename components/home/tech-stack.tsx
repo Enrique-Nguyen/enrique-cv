@@ -3,7 +3,7 @@ import { skills } from "@/lib/data";
 export default function TechStack() {
   return (
     <section className="py-16 md:py-24 border-y bg-muted/30">
-      <div className="container px-4 md:px-6 mb-12 text-center">
+      <div className="container mx-auto px-4 md:px-6 mb-12 text-center">
         {/* <p className="text-sm font-medium text-primary uppercase tracking-widest mb-3">
           Tech Stack
         </p> */}

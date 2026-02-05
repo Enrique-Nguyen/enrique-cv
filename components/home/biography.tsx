@@ -4,7 +4,6 @@ import {
   GraduationCap, 
   Award, 
   Briefcase, 
-  Heart,
   Target,
   Calendar,
   Pen
@@ -25,14 +24,14 @@ const achievements = [
     icon: GraduationCap,
     title: "Sinh viên CNTT",
     description: "Đại học Thủy Lợi (TLU)",
-    date: "2022 - Hiện tại",
+    date: "2023 - Hiện tại",
     color: "text-blue-500",
     bgColor: "bg-blue-500/10",
   },
   {
     icon: Award,
     title: "Thành tích học tập",
-    description: "GPA: X.XX/4.0 - Học bổng ABC",
+    description: "GPA: 3.76/4.0 - Học bổng khuyến khích học tập 5 kì, 6.5 IELTS, JLPT N3",
     date: "2023",
     color: "text-yellow-500",
     bgColor: "bg-yellow-500/10",
@@ -40,16 +39,16 @@ const achievements = [
   {
     icon: Briefcase,
     title: "Dự án thực tế",
-    description: "X+ dự án cá nhân & nhóm",
-    date: "2023 - 2024",
+    description: "5+ dự án cá nhân & nhóm về đa dạng lĩnh vực như AI, Web, Mobile",
+    date: "2023 - 2025",
     color: "text-green-500",
     bgColor: "bg-green-500/10",
   },
   {
     icon: Award,
-    title: "Chứng chỉ / Giải thưởng",
-    description: "Mô tả chứng chỉ hoặc giải thưởng",
-    date: "2024",
+    title: "Hoạt động / Giải thưởng",
+    description: "Vòng loạt quốc gia ICPC (2024), Lab nghiên cứu ứng dụng các hệ thống thông minh TLU (2025), Nghiên cứu khoa học sinh viên (2025)",
+    date: "2024-2025",
     color: "text-purple-500",
     bgColor: "bg-purple-500/10",
   },
@@ -57,17 +56,17 @@ const achievements = [
 
 // Sở thích cá nhân
 const interests = [
-  "Lập trình Web",
-  "Học tiếng Nhật",
-  "Đọc sách Tech",
-  "Open Source",
-  "UI/UX Design",
+  "Lập trình",
+  "Học ngoại ngữ",
+  "Đọc sách",
+  "Nghe nhạc",
+  "Gym & Thể thao",
   "Gaming",
 ];
 
 export default function Biography() {
   return (
-    <section className="container py-16 md:py-20">
+    <section className="container mx-auto py-16 md:py-20 px-4 md:px-8">
       <div className="max-w-5xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
@@ -151,11 +150,11 @@ export default function Biography() {
                     className="group border-2 hover:border-primary/50 hover:shadow-md transition-all duration-300"
                   >
                     <CardContent className="p-4">
-                      <div className="flex gap-4">
-                        <div className={`shrink-0 p-3 rounded-xl ${achievement.bgColor} group-hover:scale-110 transition-transform`}>
+                      <div className="flex items-start gap-4">
+                        <div className={`shrink-0 w-11 h-11 flex items-center justify-center rounded-xl ${achievement.bgColor} group-hover:scale-110 transition-transform`}>
                           <Icon className={`h-5 w-5 ${achievement.color}`} />
                         </div>
-                        <div className="space-y-1 min-w-0">
+                        <div className="space-y-1 min-w-0 flex-1">
                           <div className="flex items-center justify-between gap-2">
                             <h4 className="font-semibold">{achievement.title}</h4>
                             <span className="text-xs text-muted-foreground flex items-center gap-1 shrink-0">

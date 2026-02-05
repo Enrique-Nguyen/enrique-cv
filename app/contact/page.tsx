@@ -43,7 +43,7 @@ const contactChannels = [
     value: "github.com/Enrique-Nguyen",
     href: "https://github.com/Enrique-Nguyen",
     icon: Github,
-    color: "hover:bg-gray-800 hover:border-gray-800 dark:hover:bg-white dark:hover:border-white",
+    color: "hover:bg-gray-800 hover:border-gray-800 dark:hover:bg-gray-700 dark:hover:border-gray-700",
     iconColor: "text-gray-800 dark:text-white",
     bgColor: "bg-gray-800/10 dark:bg-white/10",
   },
@@ -88,7 +88,7 @@ export default function ContactPage() {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
       </div>
 
-      <section className="container py-16 md:py-24 lg:py-32">
+      <section className="container mx-auto px-4 md:px-8 py-16 md:py-24 lg:py-32">
         {/* Header */}
         <div className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
           <Badge variant="secondary" className="mb-4 px-4 py-1.5 text-sm font-medium rounded-full">
