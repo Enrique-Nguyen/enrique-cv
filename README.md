@@ -134,10 +134,6 @@ Mọi đóng góp đều được chào đón! Vui lòng:
 4. Push to branch (`git push origin feature/AmazingFeature`)
 5. Tạo Pull Request
 
-## 📄 Giấy Phép
-
-Dự án này sử dụng giấy phép MIT. Xem file `LICENSE` để biết thêm chi tiết.
-
 ## 📞 Liên Hệ
 
 Nguyễn Phú Nguyên - [nguyenphunguyen2005@gmail.com](mailto:nguyenphunguyen2005@gmail.com)
