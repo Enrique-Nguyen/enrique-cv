@@ -35,7 +35,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
     return descriptionMap[project.title] || project.description;
   };
   return (
-    <Card className="group flex flex-col h-full overflow-hidden border transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+    <Card className="pt-0 group flex flex-col h-full overflow-hidden border transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
       {/* Phần ảnh bìa dự án */}
       <div className="relative aspect-video w-full overflow-hidden bg-muted">
         <Image
