@@ -41,7 +41,7 @@ export default function HeroSection() {
           
           <h2 className="text-2xl md:text-3xl font-semibold">
             <span className="bg-linear-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-              Full-stack Developer
+              {t("hero.role")}
             </span>
           </h2>
 

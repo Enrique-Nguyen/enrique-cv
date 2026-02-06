@@ -39,18 +39,18 @@ export const translations = {
     },
     name: {
       vi: "Nguyễn Phú Nguyên",
-      en: "Nguyen Phu Nguyen",
+      en: "Phu Nguyen Nguyen",
       ja: "グエン・フー・グエン",
     },
     role: {
-      vi: "Full-stack Developer",
-      en: "Full-stack Developer",
-      ja: "フルスタック開発者",
+      vi: "Sinh viên IT",
+      en: "IT Student",
+      ja: "IT学生",
     },
     location: {
       vi: "Hà Nội, Việt Nam • Đang hướng tới Nhật Bản",
       en: "Hanoi, Vietnam • Aiming for Japan",
-      ja: "ハノイ、ベトナム • 日本を目指しています",
+      ja: "ベトナム、ハノイ • 日本を目指しています",
     },
     description: {
       vi: "Sinh viên chuyên ngành CNTT tại TLU với niềm đam mê xây dựng các ứng dụng phần mềm",
@@ -241,9 +241,9 @@ export const translations = {
       ja: "技術スタック",
     },
     description: {
-      vi: "Những công nghệ mình thường xuyên sử dụng trong các dự án",
-      en: "Technologies I frequently use in my projects",
-      ja: "プロジェクトで頻繁に使用する技術",
+      vi: "Những công nghệ mình đã sử dụng trong các dự án",
+      en: "Technologies I have used in my projects",
+      ja: "プロジェクトで使用した技術",
     },
   },
 

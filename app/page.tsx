@@ -8,11 +8,6 @@ export default function Home() {
       <HeroSection />
       <Biography />
       <TechStack />
-      
-      {/* Chỗ này sau này mình sẽ để component Projects và Skills */}
-      {/* <section className="container h-[50vh] flex items-center justify-center border-t border-dashed">
-        <p className="text-muted-foreground">Phần Skills & Projects sẽ nằm ở đây...</p>
-      </section> */}
     </div>
   );
 }
