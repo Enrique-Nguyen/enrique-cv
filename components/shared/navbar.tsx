@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ModeToggle } from "@/components/mode-toggle";
+import { LanguageSelector } from "@/components/language-selector";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -9,13 +10,16 @@ import {
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, Download } from "lucide-react";
+import { useLanguage } from "@/lib/language-context";
 
 export default function Navbar() {
+  const { t } = useLanguage();
+  
   const navLinks = [
-    { name: "About", href: "/" },
-    { name: "Projects", href: "/projects" },
-    { name: "Contact", href: "/contact" }, 
+    { name: t("navbar.about"), href: "/" },
+    { name: t("navbar.projects"), href: "/projects" },
+    { name: t("navbar.contact"), href: "/contact" }, 
   ];
 
   return (
@@ -45,10 +49,10 @@ export default function Navbar() {
 
         {/* Nút bên phải */}
         <div className="flex items-center gap-2">
-           {/* Nút Download CV (chỉ hiện trên desktop để tiết kiệm chỗ trên mobile) */}
-           <Link href="/resume.pdf" target="_blank" className="hidden md:block">
-              <Button variant="ghost" size="sm">CV</Button>
-           </Link>
+           {/* Language Selector */}
+           <div className="hidden md:block">
+              <LanguageSelector />
+           </div>
            <ModeToggle />
            
            {/* Mobile Menu */}
@@ -84,16 +88,12 @@ export default function Navbar() {
                    ))}
                  </nav>
                  
-                 {/* Footer with CV Download */}
+                 {/* Footer with Language Selector */}
                  <div className="mt-auto p-4 border-t border-border/40">
-                   <SheetClose asChild>
-                     <Link href="/resume.pdf" target="_blank">
-                       <Button variant="default" className="w-full gap-2">
-                         <Download className="h-4 w-4" />
-                         Tải xuống CV
-                       </Button>
-                     </Link>
-                   </SheetClose>
+                   <div className="flex items-center justify-between">
+                     <span className="text-sm text-muted-foreground">{t("navbar.about").includes("About") ? "Language" : t("navbar.about").includes("自己") ? "言語" : "Ngôn ngữ"}</span>
+                     <LanguageSelector />
+                   </div>
                  </div>
                </div>
              </SheetContent>

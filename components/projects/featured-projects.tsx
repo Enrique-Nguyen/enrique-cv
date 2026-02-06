@@ -1,20 +1,25 @@
+"use client";
+
 import { projects } from "@/lib/data";
 import { ProjectCard } from "@/components/projects/project-card";
+import { useLanguage } from "@/lib/language-context";
 
 export default function FeaturedProjects() {
+  const { t } = useLanguage();
+
   return (
     <section id="projects" className="py-20 md:py-32">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col items-center gap-4 mb-12 md:mb-16 text-center">
           <p className="text-sm font-medium text-primary uppercase tracking-widest">
-            Portfolio
+            {t("projectsSection.badge")}
           </p>
           <h2 className="text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
-            Dự án tiêu biểu
+            {t("projectsSection.title")}
           </h2>
           <p className="text-muted-foreground max-w-2xl text-base md:text-lg">
-            Dưới đây là một số dự án cá nhân và bài tập lớn mình đã thực hiện trong quá trình học tập và nghiên cứu.
+            {t("projectsSection.description")}
           </p>
         </div>
 

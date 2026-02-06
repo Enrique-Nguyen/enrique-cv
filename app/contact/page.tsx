@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -14,72 +16,73 @@ import {
   Copy,
   Facebook
 } from "lucide-react";
-
-// Dữ liệu các kênh liên hệ - bạn có thể chỉnh sửa link ở đây
-const contactChannels = [
-  {
-    name: "Email",
-    description: "Gửi email cho mình",
-    value: "nguyenphunguyen2005@gmail.com",
-    href: "mailto:nguyenphunguyen2005@gmail.com",
-    icon: Mail,
-    color: "hover:bg-red-500 hover:border-red-500",
-    iconColor: "text-red-500",
-    bgColor: "bg-red-500/10",
-  },
-  {
-    name: "LinkedIn",
-    description: "Kết nối chuyên nghiệp",
-    value: "linkedin.com/in/phú-nguyễn-nguyễn-b47803285",
-    href: "https://www.linkedin.com/in/ph%C3%BA-nguy%C3%AAn-nguy%E1%BB%85n-b47803285/",
-    icon: Linkedin,
-    color: "hover:bg-[#0077B5] hover:border-[#0077B5]",
-    iconColor: "text-[#0077B5]",
-    bgColor: "bg-[#0077B5]/10",
-  },
-  {
-    name: "GitHub",
-    description: "Xem các dự án của mình",
-    value: "github.com/Enrique-Nguyen",
-    href: "https://github.com/Enrique-Nguyen",
-    icon: Github,
-    color: "hover:bg-gray-800 hover:border-gray-800 dark:hover:bg-gray-700 dark:hover:border-gray-700",
-    iconColor: "text-gray-800 dark:text-white",
-    bgColor: "bg-gray-800/10 dark:bg-white/10",
-  },
-  {
-    name: "Zalo",
-    description: "Chat nhanh qua Zalo",
-    value: "0364 779 789",
-    href: "https://zalo.me/0364779789",
-    icon: MessageCircle,
-    color: "hover:bg-[#0084FF] hover:border-[#0084FF]",
-    iconColor: "text-[#0084FF]",
-    bgColor: "bg-[#0084FF]/10",
-  },
-  {
-    name: "Điện thoại",
-    description: "Gọi điện trực tiếp",
-    value: "+84 397 970 205",
-    href: "tel:+84397970205",
-    icon: Phone,
-    color: "hover:bg-green-500 hover:border-green-500",
-    iconColor: "text-green-500",
-    bgColor: "bg-green-500/10",
-  },
-  {
-    name: "Facebook",
-    description: "Trang cá nhân Facebook",
-    value: "Phú Nguyên",
-    href: "https://www.facebook.com/phu.nguyen.402833/",
-    icon: Facebook,
-    color: "hover:bg-[#0077B5] hover:border-[#0077B5]",
-    iconColor: "text-[#0077B5]",
-    bgColor: "bg-[#0077B5]/10",
-  },
-];
+import { useLanguage } from "@/lib/language-context";
 
 export default function ContactPage() {
+  const { t, language } = useLanguage();
+
+  const contactChannels = [
+    {
+      name: t("contactChannels.email.name"),
+      description: t("contactChannels.email.description"),
+      value: "nguyenphunguyen2005@gmail.com",
+      href: "mailto:nguyenphunguyen2005@gmail.com",
+      icon: Mail,
+      color: "hover:bg-red-500 hover:border-red-500",
+      iconColor: "text-red-500",
+      bgColor: "bg-red-500/10",
+    },
+    {
+      name: t("contactChannels.linkedin.name"),
+      description: t("contactChannels.linkedin.description"),
+      value: "linkedin.com/in/phú-nguyễn-nguyễn-b47803285",
+      href: "https://www.linkedin.com/in/ph%C3%BA-nguy%C3%AAn-nguy%E1%BB%85n-b47803285/",
+      icon: Linkedin,
+      color: "hover:bg-[#0077B5] hover:border-[#0077B5]",
+      iconColor: "text-[#0077B5]",
+      bgColor: "bg-[#0077B5]/10",
+    },
+    {
+      name: t("contactChannels.github.name"),
+      description: t("contactChannels.github.description"),
+      value: "github.com/Enrique-Nguyen",
+      href: "https://github.com/Enrique-Nguyen",
+      icon: Github,
+      color: "hover:bg-gray-800 hover:border-gray-800 dark:hover:bg-gray-700 dark:hover:border-gray-700",
+      iconColor: "text-gray-800 dark:text-white",
+      bgColor: "bg-gray-800/10 dark:bg-white/10",
+    },
+    {
+      name: t("contactChannels.zalo.name"),
+      description: t("contactChannels.zalo.description"),
+      value: "0364 779 789",
+      href: "https://zalo.me/0364779789",
+      icon: MessageCircle,
+      color: "hover:bg-[#0084FF] hover:border-[#0084FF]",
+      iconColor: "text-[#0084FF]",
+      bgColor: "bg-[#0084FF]/10",
+    },
+    {
+      name: t("contactChannels.phone.name"),
+      description: t("contactChannels.phone.description"),
+      value: "+84 397 970 205",
+      href: "tel:+84397970205",
+      icon: Phone,
+      color: "hover:bg-green-500 hover:border-green-500",
+      iconColor: "text-green-500",
+      bgColor: "bg-green-500/10",
+    },
+    {
+      name: t("contactChannels.facebook.name"),
+      description: t("contactChannels.facebook.description"),
+      value: "Phú Nguyên",
+      href: "https://www.facebook.com/phu.nguyen.402833/",
+      icon: Facebook,
+      color: "hover:bg-[#0077B5] hover:border-[#0077B5]",
+      iconColor: "text-[#0077B5]",
+      bgColor: "bg-[#0077B5]/10",
+    },
+  ];
   return (
     <div className="relative min-h-[calc(100vh-4rem)]">
       {/* Background decoration */}
@@ -93,24 +96,22 @@ export default function ContactPage() {
         <div className="max-w-2xl mx-auto text-center mb-12 md:mb-16">
           <Badge variant="secondary" className="mb-4 px-4 py-1.5 text-sm font-medium rounded-full">
             <Send className="h-3 w-3 mr-2" />
-            Liên hệ
+            {t("contact.badge")}
           </Badge>
           
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-            Hãy kết nối với mình
+            {t("contact.title")}
           </h1>
           
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Mình luôn sẵn sàng lắng nghe về các cơ hội hợp tác, dự án thú vị, 
-            hoặc đơn giản là một cuộc trò chuyện về công nghệ. 
-            Đừng ngần ngại liên hệ nhé!
+            {t("contact.description")}
           </p>
         </div>
 
         {/* Location info */}
         <div className="flex items-center justify-center gap-2 text-muted-foreground mb-12">
           <MapPin className="h-4 w-4" />
-          <span>Hà Nội, Việt Nam • Múi giờ UTC+7</span>
+          <span>{t("contact.location")}</span>
         </div>
 
         {/* Contact Cards Grid */}
@@ -128,15 +129,14 @@ export default function ContactPage() {
                 <div className="w-16 h-16 mx-auto rounded-full bg-primary/10 flex items-center justify-center">
                   <Mail className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold">Ưu tiên liên hệ qua Email</h3>
+                <h3 className="text-xl font-semibold">{t("contact.emailPreferred")}</h3>
                 <p className="text-muted-foreground max-w-md mx-auto">
-                  Để trao đổi chi tiết về công việc hoặc dự án, 
-                  email là cách tốt nhất để mình có thể phản hồi đầy đủ và nhanh chóng.
+                  {t("contact.emailDescription")}
                 </p>
                 <Link href="mailto:nguyenphunguyen2005@gmail.com">
                   <Button size="lg" className="mt-2 group">
                     <Mail className="mr-2 h-4 w-4" />
-                    Gửi email ngay
+                    {t("contact.sendEmail")}
                     <ExternalLink className="ml-2 h-4 w-4 opacity-50 group-hover:opacity-100 transition-opacity" />
                   </Button>
                 </Link>
@@ -147,7 +147,7 @@ export default function ContactPage() {
 
         {/* Response time note */}
         <p className="text-center text-sm text-muted-foreground mt-8">
-          ⚡ Thường phản hồi trong vòng 24 giờ
+          {t("contact.responseTime")}
         </p>
       </section>
     </div>
@@ -167,6 +167,7 @@ interface ContactChannel {
 }
 
 function ContactCard({ channel }: { channel: ContactChannel }) {
+  const { t } = useLanguage();
   const Icon = channel.icon;
   
   return (
@@ -191,7 +192,7 @@ function ContactCard({ channel }: { channel: ContactChannel }) {
           {/* Hover indicator */}
           <div className="mt-4 flex items-center gap-2 text-sm text-muted-foreground group-hover:text-white/80 transition-colors">
             <ExternalLink className="h-4 w-4" />
-            <span>Mở liên kết</span>
+            <span>{t("contact.openLink")}</span>
           </div>
         </CardContent>
       </Card>

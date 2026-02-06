@@ -1,10 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Github, Linkedin, Mail, ArrowRight, Download, MapPin, ChevronDown } from "lucide-react";
+import { useLanguage } from "@/lib/language-context";
 
 export default function HeroSection() {
+  const { t } = useLanguage();
   return (
     <section className="relative container mx-auto flex flex-col md:flex-row items-center justify-center py-12 md:py-16 lg:py-20 gap-10 md:gap-12 lg:gap-20 overflow-hidden px-4 md:px-8">
       
@@ -21,17 +25,17 @@ export default function HeroSection() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
               </span>
-              Sẵn sàng làm việc
+              {t("hero.availableForWork")}
             </Badge>
           </div>
           
           <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest">
-            👋 Xin chào, mình là
+            {t("hero.greeting")}
           </p>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
             <span className="bg-linear-to-r from-foreground via-foreground to-primary bg-clip-text text-transparent">
-              Nguyễn Phú Nguyên
+              {t("hero.name")}
             </span>
           </h1>
           
@@ -43,27 +47,27 @@ export default function HeroSection() {
 
           <div className="flex items-center gap-2 justify-center md:justify-start text-muted-foreground">
             <MapPin className="h-4 w-4" />
-            <span className="text-sm">Hà Nội, Việt Nam • Đang hướng tới Nhật Bản</span>
+            <span className="text-sm">{t("hero.location")}</span>
           </div>
         </div>
 
         <p className="text-muted-foreground max-w-xl md:text-lg leading-relaxed mx-auto md:mx-0">
-          Sinh viên chuyên ngành CNTT tại TLU với niềm đam mê xây dựng các ứng dụng phần mềm 
-          <span className="text-foreground font-medium"> Web, Mobile </span> 
-          sử dụng đa dạng framework và TechStack. Đang tìm kiếm cơ hội thực tập/làm việc tại môi trường Nhật Bản 🇯🇵
+          {t("hero.description")}
+          <span className="text-foreground font-medium">{t("hero.descriptionHighlight")}</span>
+          {t("hero.descriptionEnd")}
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
           <Link href="/contact">
             <Button size="lg" className="w-full sm:w-auto group shadow-lg hover:shadow-primary/25 transition-all duration-300">
-              Liên hệ ngay
+              {t("hero.contactNow")}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
           <Link href="/resume.pdf" target="_blank">
             <Button size="lg" variant="outline" className="w-full sm:w-auto group hover:bg-primary/5 transition-all duration-300">
               <Download className="mr-2 h-4 w-4 transition-transform group-hover:-translate-y-0.5" />
-              Tải xuống CV
+              {t("hero.downloadCV")}
             </Button>
           </Link>
         </div>
@@ -119,7 +123,7 @@ export default function HeroSection() {
 
       {/* Scroll Down Indicator - Hidden on mobile to prevent overlap with avatar */}
       <div className="hidden md:flex absolute bottom-6 left-1/2 -translate-x-1/2 flex-col items-center gap-2 animate-fade-in">
-        <span className="text-xs text-muted-foreground font-medium">Cuộn xuống</span>
+        <span className="text-xs text-muted-foreground font-medium">{t("hero.scrollDown")}</span>
         <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-1.5">
           <div className="w-1.5 h-1.5 rounded-full bg-primary animate-scroll-down" />
         </div>

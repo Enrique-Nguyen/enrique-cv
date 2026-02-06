@@ -1,17 +1,19 @@
+"use client";
+
 import { skills } from "@/lib/data";
+import { useLanguage } from "@/lib/language-context";
 
 export default function TechStack() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-16 md:py-24 border-y bg-muted/30">
       <div className="container mx-auto px-4 md:px-6 mb-12 text-center">
-        {/* <p className="text-sm font-medium text-primary uppercase tracking-widest mb-3">
-          Tech Stack
-        </p> */}
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
-          Tech stack
+          {t("techStack.title")}
         </h2>
         <p className="text-muted-foreground max-w-lg mx-auto">
-          Những công nghệ mình thường xuyên sử dụng trong các dự án
+          {t("techStack.description")}
         </p>
       </div>
 

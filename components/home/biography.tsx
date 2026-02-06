@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { 
@@ -8,63 +10,54 @@ import {
   Calendar,
   Pen
 } from "lucide-react";
-
-// Thông tin tiểu sử - bạn có thể chỉnh sửa ở đây
-const biography = {
-  introduction: `Mình là một sinh viên năm 3 đang theo học chuyên ngành Công nghệ Thông tin 
-    tại Đại học Thủy Lợi (TLU). Với niềm đam mê mãnh liệt dành cho lập trình và phát triển phần mềm, 
-    mình luôn không ngừng học hỏi và trau dồi kỹ năng mỗi ngày.`,
-  goal: `Mục tiêu của mình là trở thành một Full-stack Developer chuyên nghiệp, 
-    có cơ hội làm việc trong môi trường quốc tế, đặc biệt là tại Nhật Bản 🇯🇵`,
-};
-
-// Các thành tích & cột mốc quan trọng
-const achievements = [
-  {
-    icon: GraduationCap,
-    title: "Sinh viên CNTT",
-    description: "Đại học Thủy Lợi (TLU)",
-    date: "2023 - Hiện tại",
-    color: "text-blue-500",
-    bgColor: "bg-blue-500/10",
-  },
-  {
-    icon: Award,
-    title: "Thành tích học tập",
-    description: "GPA: 3.76/4.0 - Học bổng khuyến khích học tập 5 kì, 6.5 IELTS, JLPT N3",
-    date: "2023",
-    color: "text-yellow-500",
-    bgColor: "bg-yellow-500/10",
-  },
-  {
-    icon: Briefcase,
-    title: "Dự án thực tế",
-    description: "5+ dự án cá nhân & nhóm về đa dạng lĩnh vực như AI, Web, Mobile",
-    date: "2023 - 2025",
-    color: "text-green-500",
-    bgColor: "bg-green-500/10",
-  },
-  {
-    icon: Award,
-    title: "Hoạt động / Giải thưởng",
-    description: "Vòng loạt quốc gia ICPC (2024), Lab nghiên cứu ứng dụng các hệ thống thông minh TLU (2025), Nghiên cứu khoa học sinh viên (2025)",
-    date: "2024-2025",
-    color: "text-purple-500",
-    bgColor: "bg-purple-500/10",
-  },
-];
-
-// Sở thích cá nhân
-const interests = [
-  "Lập trình",
-  "Học ngoại ngữ",
-  "Đọc sách",
-  "Nghe nhạc",
-  "Gym & Thể thao",
-  "Gaming",
-];
+import { useLanguage } from "@/lib/language-context";
 
 export default function Biography() {
+  const { t } = useLanguage();
+
+  const achievements = [
+    {
+      icon: GraduationCap,
+      title: t("achievements.student.title"),
+      description: t("achievements.student.description"),
+      date: t("achievements.student.date"),
+      color: "text-blue-500",
+      bgColor: "bg-blue-500/10",
+    },
+    {
+      icon: Award,
+      title: t("achievements.academic.title"),
+      description: t("achievements.academic.description"),
+      date: "2023",
+      color: "text-yellow-500",
+      bgColor: "bg-yellow-500/10",
+    },
+    {
+      icon: Briefcase,
+      title: t("achievements.projects.title"),
+      description: t("achievements.projects.description"),
+      date: "2023 - 2025",
+      color: "text-green-500",
+      bgColor: "bg-green-500/10",
+    },
+    {
+      icon: Award,
+      title: t("achievements.awards.title"),
+      description: t("achievements.awards.description"),
+      date: "2024-2025",
+      color: "text-purple-500",
+      bgColor: "bg-purple-500/10",
+    },
+  ];
+
+  const interests = [
+    t("interests.programming"),
+    t("interests.languages"),
+    t("interests.reading"),
+    t("interests.music"),
+    t("interests.gym"),
+    t("interests.gaming"),
+  ];
   return (
     <section className="container mx-auto py-16 md:py-20 px-4 md:px-8">
       <div className="max-w-5xl mx-auto">
@@ -72,13 +65,13 @@ export default function Biography() {
         <div className="text-center mb-12">
           <Badge variant="secondary" className="mb-4 px-4 py-1.5 text-sm font-medium rounded-full">
             <Pen className="h-3 w-3 mr-2" />
-            Về mình
+            {t("biography.badge")}
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-            Tiểu sử & Thành tích
+            {t("biography.title")}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Đôi dòng về hành trình học tập và phát triển của mình
+            {t("biography.subtitle")}
           </p>
         </div>
 
@@ -91,10 +84,10 @@ export default function Biography() {
                 <span className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
                   📖
                 </span>
-                Giới thiệu
+                {t("biography.introductionTitle")}
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                {biography.introduction}
+                {t("biography.introduction")}
               </p>
             </div>
 
@@ -103,10 +96,10 @@ export default function Biography() {
                 <span className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
                   <Target className="h-4 w-4 text-primary" />
                 </span>
-                Mục tiêu
+                {t("biography.goalTitle")}
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                {biography.goal}
+                {t("biography.goal")}
               </p>
             </div>
 
@@ -116,7 +109,7 @@ export default function Biography() {
                 <span className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
                   ✨
                 </span>
-                Sở thích
+                {t("biography.interestsTitle")}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {interests.map((interest) => (
@@ -138,7 +131,7 @@ export default function Biography() {
               <span className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
                 🏆
               </span>
-              Thành tích & Cột mốc
+              {t("biography.achievementsTitle")}
             </h3>
             
             <div className="space-y-4">
