@@ -1,6 +1,24 @@
 export type Language = "vi" | "en" | "ja";
 
 export const translations = {
+  // Mode toggle  
+  modeToggle: {
+    light: {
+      vi: "Sáng",
+      en: "Light",
+      ja: "ライト",
+    },
+    dark: {
+      vi: "Tối",
+      en: "Dark",
+      ja: "ダーク",
+    },
+    system: {
+      vi: "Hệ thống",
+      en: "System",
+      ja: "システム",
+    },
+  },
   // Navbar
   navbar: {
     about: {
@@ -192,7 +210,7 @@ export const translations = {
         ja: "活動・受賞",
       },
       description: {
-        vi: "Vòng loạt quốc gia ICPC (2024), Lab nghiên cứu ứng dụng các hệ thống thông minh TLU (2025), Nghiên cứu khoa học sinh viên (2025)",
+        vi: "Vòng loại quốc gia ICPC (2024), Lab nghiên cứu ứng dụng các hệ thống thông minh TLU (2025), Nghiên cứu khoa học sinh viên (2025)",
         en: "ICPC National Round (2024), TLU Smart Systems Research Lab (2025), Student Research (2025)",
         ja: "ICPC全国大会（2024）、TLUスマートシステム研究室（2025）、学生研究（2025）",
       },
