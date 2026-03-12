@@ -31,6 +31,11 @@ export const translations = {
       en: "Projects",
       ja: "プロジェクト",
     },
+    blog: {
+      vi: "Blog",
+      en: "Blog",
+      ja: "ブログ",
+    },
     contact: {
       vi: "Liên hệ",
       en: "Contact",
@@ -464,6 +469,45 @@ export const translations = {
       vi: "Website học tập bằng flashcard tương tự Anki, bài tập lớn môn học Công nghệ phần mềm.",
       en: "Flashcard learning website similar to Anki, Software Engineering course project.",
       ja: "Ankiに似たフラッシュカード学習サイト、ソフトウェア工学コースプロジェクト。",
+    },
+  },
+
+  // Blog Section
+  blog: {
+    badge: {
+      vi: "Blog",
+      en: "Blog",
+      ja: "ブログ",
+    },
+    title: {
+      vi: "Bài viết của tôi",
+      en: "My Blog Posts",
+      ja: "私のブログ記事",
+    },
+    description: {
+      vi: "Những bài viết chia sẻ kiến thức, kinh nghiệm và góc nhìn cá nhân về lập trình và công nghệ.",
+      en: "Articles sharing knowledge, experiences and personal perspectives on programming and technology.",
+      ja: "プログラミングと技術に関する知識、経験、個人的な視点を共有する記事。",
+    },
+    readMore: {
+      vi: "Đọc tiếp",
+      en: "Read more",
+      ja: "続きを読む",
+    },
+    backToList: {
+      vi: "Quay lại danh sách",
+      en: "Back to list",
+      ja: "一覧に戻る",
+    },
+    noPosts: {
+      vi: "Chưa có bài viết nào.",
+      en: "No posts yet.",
+      ja: "まだ記事がありません。",
+    },
+    publishedOn: {
+      vi: "Đăng ngày",
+      en: "Published on",
+      ja: "公開日",
     },
   },
 };

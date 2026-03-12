@@ -1,0 +1,90 @@
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
+import { Calendar } from "lucide-react";
+
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { type BlogPost } from "@/lib/data";
+import { useLanguage } from "@/lib/language-context";
+
+interface BlogCardProps {
+  post: BlogPost;
+}
+
+export function BlogCard({ post }: BlogCardProps) {
+  const { t } = useLanguage();
+
+  // Format date
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString("vi-VN", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  };
+
+  return (
+    <Card className="pt-0 group flex flex-col h-full overflow-hidden border transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+      {/* Cover Image */}
+      {post.cover_image && (
+        <div className="relative aspect-video w-full overflow-hidden bg-muted">
+          <Image
+            src={post.cover_image}
+            alt={post.title}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        </div>
+      )}
+
+      <CardHeader>
+        <CardTitle className="line-clamp-2 text-xl">{post.title}</CardTitle>
+      </CardHeader>
+
+      <CardContent className="flex-1 space-y-4">
+        {/* Date */}
+        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <Calendar className="h-4 w-4" />
+          <span>{formatDate(post.created_at)}</span>
+        </div>
+
+        {/* Summary */}
+        {post.summary && (
+          <p className="text-muted-foreground text-sm line-clamp-3 leading-relaxed">
+            {post.summary}
+          </p>
+        )}
+
+        {/* Tags */}
+        {post.tags.length > 0 && (
+          <div className="flex flex-wrap gap-2">
+            {post.tags.map((tag) => (
+              <Badge key={tag} variant="secondary" className="font-normal text-xs">
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        )}
+      </CardContent>
+
+      <CardFooter className="pt-0 mt-auto">
+        <Link href={`/blogposts/${post.slug}`} className="w-full">
+          <Button variant="outline" className="w-full">
+            {t("blog.readMore")}
+          </Button>
+        </Link>
+      </CardFooter>
+    </Card>
+  );
+}

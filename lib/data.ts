@@ -14,6 +14,49 @@ export const skills = [
   { name: "Linux", icon: "linux" },
 ];
 
+// Blog Post Types
+export interface BlogPost {
+  title: string;
+  slug: string;
+  summary?: string;
+  content: string;
+  tags: string[];
+  cover_image?: string;
+  is_published: boolean;
+  created_at: string;
+}
+
+// API Base URL
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+
+// Fetch all blog posts
+export async function getBlogPosts(): Promise<BlogPost[]> {
+  try {
+    const res = await fetch(`${API_BASE_URL}/api/posts`, {
+      next: { revalidate: 60 }, // Revalidate every 60 seconds
+    });
+    if (!res.ok) return [];
+    return res.json();
+  } catch (error) {
+    console.error("Failed to fetch blog posts:", error);
+    return [];
+  }
+}
+
+// Fetch single blog post by slug
+export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
+  try {
+    const res = await fetch(`${API_BASE_URL}/api/posts/${slug}`, {
+      next: { revalidate: 60 },
+    });
+    if (!res.ok) return null;
+    return res.json();
+  } catch (error) {
+    console.error("Failed to fetch blog post:", error);
+    return null;
+  }
+}
+
 export interface Project {
   title: string;
   description: string;
