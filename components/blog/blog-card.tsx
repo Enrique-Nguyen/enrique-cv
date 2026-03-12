@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Calendar } from "lucide-react";
+import { Calendar, Clock } from "lucide-react";
 
 import {
   Card,
@@ -33,8 +33,10 @@ export function BlogCard({ post }: BlogCardProps) {
     });
   };
 
+  const readTime = Math.ceil(post.content.split(/\s+/).length / 200);
+
   return (
-    <Card className="pt-0 group flex flex-col h-full overflow-hidden border transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+    <Card className="pt-0 group flex flex-col h-full overflow-hidden border-0 bg-gradient-to-b from-card to-card/50 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-primary/20">
       {/* Cover Image */}
       {post.cover_image && (
         <div className="relative aspect-video w-full overflow-hidden bg-muted">
@@ -54,9 +56,15 @@ export function BlogCard({ post }: BlogCardProps) {
 
       <CardContent className="flex-1 space-y-4">
         {/* Date */}
-        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-          <Calendar className="h-4 w-4" />
-          <span>{formatDate(post.created_at)}</span>
+        <div className="flex items-center gap-4 text-sm text-muted-foreground">
+          <div className="flex items-center gap-1.5">
+            <Calendar className="h-4 w-4" />
+            <span>{formatDate(post.created_at)}</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <Clock className="h-4 w-4" />
+            <span>{readTime} {t("blog.minRead")}</span>
+          </div>
         </div>
 
         {/* Summary */}

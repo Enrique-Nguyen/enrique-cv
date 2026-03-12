@@ -22,5 +22,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
-  return <BlogPostContent post={post} />;
+  const allPosts = await getBlogPosts();
+  const relatedPosts = allPosts
+    .filter((p) => p.slug !== post.slug && p.tags.some((tag) => post.tags.includes(tag)))
+    .slice(0, 3);
+
+  return <BlogPostContent post={post} relatedPosts={relatedPosts} />;
 }

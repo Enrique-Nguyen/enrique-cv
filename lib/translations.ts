@@ -509,6 +509,42 @@ export const translations = {
       en: "Published on",
       ja: "公開日",
     },
+    minRead: {
+      vi: "phút đọc",
+      en: "min read",
+      ja: "分で読める",
+    },
+    allTags: {
+      vi: "Tất cả",
+      en: "All",
+      ja: "すべて",
+    },
+    filterByTag: {
+      vi: "Lọc theo thẻ",
+      en: "Filter by tag",
+      ja: "タグで絞り込み",
+    },
+    relatedPosts: {
+      vi: "Bài viết liên quan",
+      en: "Related Posts",
+      ja: "関連記事",
+    },
+    share: {
+      vi: "Chia sẻ",
+      en: "Share",
+      ja: "共有",
+    },
+    copyLink: {
+      vi: "Sao chép liên kết",
+      en: "Copy link",
+      ja: "リンクをコピー",
+    },
+    linkCopied: {
+      vi: "Đã sao chép!",
+      en: "Link copied!",
+      ja: "コピーしました！",
+    },
+
   },
 };
 
