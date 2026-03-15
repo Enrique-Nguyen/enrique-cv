@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import ReactMarkdown from "react-markdown";
 import { ArrowLeft, Calendar, Clock, Share2, Link2, Facebook, Twitter, Linkedin, Check } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -114,12 +115,43 @@ export function BlogPostContent({ post, relatedPosts = [] }: BlogPostContentProp
 
         {/* Content - Render as Markdown */}
         <div className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-img:rounded-lg prose-img:shadow-md prose-code:bg-muted prose-code:px-1 prose-code:rounded prose-blockquote:border-l-primary">
-          <div
-            className="whitespace-pre-wrap leading-relaxed"
-            dangerouslySetInnerHTML={{
-              __html: formatMarkdown(post.content),
+          <ReactMarkdown
+            components={{
+              a: ({ href, children }) => {
+                const safeHref = href ?? "#";
+                const isExternal = /^https?:\/\//i.test(safeHref);
+
+                return (
+                  <a
+                    href={safeHref}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
+                    className="text-primary underline underline-offset-4 hover:text-primary/80"
+                  >
+                    {children}
+                  </a>
+                );
+              },
+              img: ({ src, alt }) => {
+                if (typeof src !== "string" || src.length === 0) {
+                  return null;
+                }
+
+                return (
+                  <Image
+                    src={src}
+                    alt={alt ?? ""}
+                    width={1200}
+                    height={675}
+                    unoptimized
+                    className="my-6 h-auto w-full rounded-lg shadow-md"
+                  />
+                );
+              },
             }}
-          />
+          >
+            {post.content}
+          </ReactMarkdown>
         </div>
 
         {/* Share Buttons */}
@@ -161,25 +193,4 @@ export function BlogPostContent({ post, relatedPosts = [] }: BlogPostContentProp
       </div>
     </article>
   );
-}
-
-// Simple markdown formatter
-function formatMarkdown(content: string): string {
-  return content
-    // Headers
-    .replace(/^### (.*$)/gim, '<h3 class="text-xl font-semibold mt-6 mb-3">$1</h3>')
-    .replace(/^## (.*$)/gim, '<h2 class="text-2xl font-bold mt-8 mb-4">$1</h2>')
-    .replace(/^# (.*$)/gim, '<h1 class="text-3xl font-bold mt-8 mb-4">$1</h1>')
-    // Bold and italic
-    .replace(/\*\*\*(.*?)\*\*\*/gim, '<strong><em>$1</em></strong>')
-    .replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>')
-    .replace(/\*(.*?)\*/gim, '<em>$1</em>')
-    // Code blocks
-    .replace(/```([\s\S]*?)```/gim, '<pre class="bg-muted p-4 rounded-lg overflow-x-auto my-4"><code>$1</code></pre>')
-    // Inline code
-    .replace(/`(.*?)`/gim, '<code class="bg-muted px-1.5 py-0.5 rounded text-sm">$1</code>')
-    // Links
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/gim, '<a href="$2" class="text-primary underline underline-offset-4 hover:text-primary/80" target="_blank" rel="noopener noreferrer">$1</a>')
-    // Line breaks
-    .replace(/\n/gim, '<br />');
 }
