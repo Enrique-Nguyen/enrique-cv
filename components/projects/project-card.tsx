@@ -22,7 +22,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   const { t, language } = useLanguage();
-  
+
   // Get translated description based on project title
   const getTranslatedDescription = () => {
     const descriptionMap: Record<string, string> = {
@@ -31,6 +31,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
       "Personal Portfolio": t("projectDescriptions.portfolio"),
       "Quản lí thư viện": t("projectDescriptions.library"),
       "Website thẻ học tập": t("projectDescriptions.flashcard"),
+      "Hệ thống cảnh báo xâm nhập mặn": t(
+        "projectDescriptions.salinityWarning",
+      ),
     };
     return descriptionMap[project.title] || project.description;
   };
@@ -59,7 +62,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
         {/* Danh sách Tags công nghệ */}
         <div className="flex flex-wrap gap-2">
           {project.tags.map((tag) => (
-            <Badge key={tag} variant="secondary" className="font-normal text-xs">
+            <Badge
+              key={tag}
+              variant="secondary"
+              className="font-normal text-xs"
+            >
               {tag}
             </Badge>
           ))}
@@ -68,17 +75,31 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
       <CardFooter className="flex gap-2 pt-0 mt-auto">
         {project.repoUrl && (
-          <Link href={project.repoUrl} target="_blank" className={project.demoUrl ? "flex-1" : "w-full"}>
+          <Link
+            href={project.repoUrl}
+            target="_blank"
+            className={project.demoUrl ? "flex-1" : "w-full"}
+          >
             <Button variant="outline" className="w-full gap-2">
-              <Github className="h-4 w-4" /> {language === "vi" ? "Mã nguồn" : language === "ja" ? "コード" : "Code"}
+              <Github className="h-4 w-4" />{" "}
+              {language === "vi"
+                ? "Mã nguồn"
+                : language === "ja"
+                  ? "コード"
+                  : "Code"}
             </Button>
           </Link>
         )}
 
         {project.demoUrl && (
-          <Link href={project.demoUrl} target="_blank" className={project.repoUrl ? "flex-1" : "w-full"}>
+          <Link
+            href={project.demoUrl}
+            target="_blank"
+            className={project.repoUrl ? "flex-1" : "w-full"}
+          >
             <Button className="w-full gap-2">
-              <ExternalLink className="h-4 w-4" /> {language === "vi" ? "Xem" : language === "ja" ? "デモ" : "Demo"}
+              <ExternalLink className="h-4 w-4" />{" "}
+              {language === "vi" ? "Xem" : language === "ja" ? "デモ" : "Demo"}
             </Button>
           </Link>
         )}
@@ -86,7 +107,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
         {/* Hiển thị khi không có cả repoUrl và demoUrl */}
         {!project.repoUrl && !project.demoUrl && (
           <Button variant="secondary" className="w-full" disabled>
-            {language === "vi" ? "Đang cập nhật" : language === "ja" ? "更新中" : "Coming soon"}
+            {language === "vi"
+              ? "Đang cập nhật"
+              : language === "ja"
+                ? "更新中"
+                : "Coming soon"}
           </Button>
         )}
       </CardFooter>

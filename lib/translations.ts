@@ -1,7 +1,7 @@
 export type Language = "vi" | "en" | "ja";
 
 export const translations = {
-  // Mode toggle  
+  // Mode toggle
   modeToggle: {
     light: {
       vi: "Sáng",
@@ -470,6 +470,11 @@ export const translations = {
       en: "Flashcard learning website similar to Anki, Software Engineering course project.",
       ja: "Ankiに似たフラッシュカード学習サイト、ソフトウェア工学コースプロジェクト。",
     },
+    salinityWarning: {
+      vi: "Dự án nghiên cứu khoa học cấp trường, xây dựng cơ sở dữ liệu và ứng dụng WebGIS để hiển thị dữ liệu.",
+      en: "University research project, building a database and a WebGIS application to visualize data.",
+      ja: "大学の研究プロジェクトで、データベースとWebGISアプリを構築してデータを可視化。",
+    },
   },
 
   // Blog Section
@@ -544,18 +549,14 @@ export const translations = {
       en: "Link copied!",
       ja: "コピーしました！",
     },
-
   },
 };
 
 // Helper function to get translation
-export function t(
-  key: string,
-  lang: Language
-): string {
+export function t(key: string, lang: Language): string {
   const keys = key.split(".");
   let result: unknown = translations;
-  
+
   for (const k of keys) {
     if (result && typeof result === "object" && k in result) {
       result = (result as Record<string, unknown>)[k];
@@ -563,10 +564,10 @@ export function t(
       return key;
     }
   }
-  
+
   if (result && typeof result === "object" && lang in result) {
     return (result as Record<string, string>)[lang];
   }
-  
+
   return key;
 }

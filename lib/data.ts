@@ -44,7 +44,9 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
 }
 
 // Fetch single blog post by slug
-export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
+export async function getBlogPostBySlug(
+  slug: string,
+): Promise<BlogPost | null> {
   try {
     const res = await fetch(`${API_BASE_URL}/api/posts/${slug}`, {
       next: { revalidate: 60 },
@@ -62,30 +64,33 @@ export interface Project {
   description: string;
   tags: string[];
   imageUrl: string;
-  repoUrl?: string; 
-  demoUrl?: string; 
+  repoUrl?: string;
+  demoUrl?: string;
 }
 
 export const projects: Project[] = [
   {
     title: "ClassPal Mobile App",
-    description: "Bài tập lớn môn Phát triển ứng dụng di động - Ứng dụng quản lý học tập cho sinh viên.",
+    description:
+      "Bài tập lớn môn Phát triển ứng dụng di động - Ứng dụng quản lý học tập cho sinh viên.",
     tags: ["Flutter", "Dart", "Firebase"],
-    imageUrl: "/images/mobile_classpal.jpg", 
+    imageUrl: "/images/mobile_classpal.jpg",
     repoUrl: "https://github.com/Enrique-Nguyen/mobile_classpal",
   },
   {
     title: "Website bán hàng",
-    description: "Website thương mại điện tử, phục vụ cho hoạt động khởi nghiệp của bản thân.",
+    description:
+      "Website thương mại điện tử, phục vụ cho hoạt động khởi nghiệp của bản thân.",
     tags: ["Vite", "React", "TypeScript", "shadcn/ui", "axios"],
     imageUrl: "/images/hnv.jpg",
     demoUrl: "https://hnvstories.com",
   },
   {
     title: "Personal Portfolio",
-    description: "Website cá nhân giới thiệu bản thân, tích hợp chế độ tối và đa ngôn ngữ.",
+    description:
+      "Website cá nhân giới thiệu bản thân, tích hợp chế độ tối và đa ngôn ngữ.",
     tags: ["Next.js 16", "TypeScript", "Tailwind", "Shadcn/ui"],
-    imageUrl: "/images/anh_tam.jpg",
+    imageUrl: "/images/anh-tam.jpg",
     repoUrl: "https://github.com/Enrique-Nguyen/enrique-cv",
     demoUrl: "/",
   },
@@ -93,15 +98,31 @@ export const projects: Project[] = [
     title: "Quản lí thư viện",
     description: "Bài tập lớn môn học Lập trình Windows, sử dụng C# và WPF.",
     tags: ["C#", "WPF", "SQLServer"],
-    imageUrl: "/images/anh_tam.jpg",
+    imageUrl: "/images/anh-tam.jpg",
     repoUrl: "https://github.com/cloodei/librun",
   },
   {
     title: "Website thẻ học tập",
-    description: "Website học tập bằng flashcard tương tự Anki, bài tập lớn môn học Công nghệ phần mềm.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
-    imageUrl: "/images/anh_tam.jpg",
+    description:
+      "Website học tập bằng flashcard tương tự Anki, bài tập lớn môn học Công nghệ phần mềm.",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+    ],
+    imageUrl: "/images/anh-tam.jpg",
     repoUrl: "https://github.com/cloodei/btl-cnpm",
     demoUrl: "https://btl-cnpm.vercel.app/",
+  },
+  {
+    title: "Hệ thống cảnh báo xâm nhập mặn",
+    description:
+      "Dự án nghiên cứu khoa học cấp trường, xây dựng cơ sở dữ liệu và ứng dụng WebGIS để hiển thị dữ liệu.",
+    tags: ["Python", "Docker", "PostgreSQL", "Leaflet.js"],
+    imageUrl: "/images/xam-nhap-man.png",
+    repoUrl: "https://github.com/Enrique-Nguyen/mekong-salinity-webgis",
   },
 ];
