@@ -90,7 +90,7 @@ export const projects: Project[] = [
     description:
       "Website cá nhân giới thiệu bản thân, tích hợp chế độ tối và đa ngôn ngữ.",
     tags: ["Next.js 16", "TypeScript", "Tailwind", "Shadcn/ui"],
-    imageUrl: "/images/anh-tam.jpg",
+    imageUrl: "/images/anh-tam.png",
     repoUrl: "https://github.com/Enrique-Nguyen/enrique-cv",
     demoUrl: "/",
   },
@@ -98,7 +98,7 @@ export const projects: Project[] = [
     title: "Quản lí thư viện",
     description: "Bài tập lớn môn học Lập trình Windows, sử dụng C# và WPF.",
     tags: ["C#", "WPF", "SQLServer"],
-    imageUrl: "/images/anh-tam.jpg",
+    imageUrl: "/images/anh-tam.png",
     repoUrl: "https://github.com/cloodei/librun",
   },
   {
@@ -113,7 +113,7 @@ export const projects: Project[] = [
       "Express",
       "MongoDB",
     ],
-    imageUrl: "/images/anh-tam.jpg",
+    imageUrl: "/images/anh-tam.png",
     repoUrl: "https://github.com/cloodei/btl-cnpm",
     demoUrl: "https://btl-cnpm.vercel.app/",
   },
