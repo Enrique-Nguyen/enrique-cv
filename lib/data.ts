@@ -125,4 +125,13 @@ export const projects: Project[] = [
     imageUrl: "/images/xam-nhap-man.png",
     repoUrl: "https://github.com/Enrique-Nguyen/mekong-salinity-webgis",
   },
+  {
+    title: "Website chia sẻ tài liệu học tập TLU",
+    description:
+      "Web chia sẻ đề cương, slide giảng dạy, giáo trình, bài tập lớn và đồ án miễn phí do cộng đồng sinh viên TLU đóng góp",
+    tags: ["Next.js", "Supabase", "Cloud service"],
+    imageUrl: "/images/Logo-Thuy-Loi.png",
+    repoUrl: "https://github.com/Enrique-Nguyen/tai-lieu-tlu",
+    demoUrl: "https://tai-lieu-tlu-six.vercel.app/",
+  },
 ];
